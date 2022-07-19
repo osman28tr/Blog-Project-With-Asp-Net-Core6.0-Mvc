@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class FeatureManager : IGenericService<Feature>
+    public class FeatureManager : IFeatureService
     {
         IFeatureDal _featureDal;
         public FeatureManager(IFeatureDal featureDal)

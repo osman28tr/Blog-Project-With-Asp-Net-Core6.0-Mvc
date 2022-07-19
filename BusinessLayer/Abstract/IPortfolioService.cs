@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    internal interface IPortfolioService:IGenericService<Portfolio>
+    public interface IPortfolioService:IGenericService<Portfolio>
     {
     }
 }
