@@ -29,7 +29,7 @@ namespace BusinessLayer.Concrete
 
         public Skill TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _skillDal.GetById(id);
         }
 
         public List<Skill> TGetList()
