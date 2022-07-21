@@ -32,8 +32,8 @@ namespace Core_Proje.Controllers
 		}
 		public IActionResult DeleteExperience(int id)
 		{
-			var skillValue = experienceManager.TGetById(id);
-			experienceManager.TDelete(skillValue);
+			var experienceValue = experienceManager.TGetById(id);
+			experienceManager.TDelete(experienceValue);
 			return RedirectToAction("Index");
 		}
 		[HttpGet]
@@ -42,8 +42,8 @@ namespace Core_Proje.Controllers
 			ViewBag.value1 = "Düzenleme";
 			ViewBag.value2 = "Deneyimler";
 			ViewBag.value3 = "Deneyim güncelleme";
-			var skillValue = experienceManager.TGetById(id);
-			return View(skillValue);
+			var experienceValue = experienceManager.TGetById(id);
+			return View(experienceValue);
 		}
 		[HttpPost]
 		public IActionResult EditExperience(Experience experience)
