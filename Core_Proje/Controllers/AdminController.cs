@@ -24,5 +24,9 @@ namespace Core_Proje.Controllers
         {
 			return PartialView();
         }
+		public PartialViewResult PartialNavigation()
+		{
+			return PartialView();
+		}
 	}
 }
