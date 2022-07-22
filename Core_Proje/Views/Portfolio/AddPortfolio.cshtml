@@ -25,6 +25,10 @@
      @Html.TextBoxFor(x=>x.ProjectUrl,new {@class="form-control"})
      @Html.ValidationMessageFor(x=>x.ProjectUrl)
     <br />
+    <label>Platform</label>
+     @Html.TextBoxFor(x=>x.Platform,new {@class="form-control"})
+     @Html.ValidationMessageFor(x=>x.ProjectUrl)
+    <br />
     <label>Fiyat</label>
      @Html.TextBoxFor(x=>x.Price,new {@class="form-control"})
      @Html.ValidationMessageFor(x=>x.Price)
@@ -32,14 +36,6 @@
     <label>Tamamlanma Oranı</label>
      @Html.TextBoxFor(x=>x.Value,new {@class="form-control"})
      @Html.ValidationMessageFor(x=>x.Value)
-    <br />
-    <label>Proje Url</label>
-     @Html.TextBoxFor(x=>x.ProjectUrl,new {@class="form-control"})
-     @Html.ValidationMessageFor(x=>x.ProjectUrl)
-    <br />
-    <label>Proje Url</label>
-     @Html.TextBoxFor(x=>x.ProjectUrl,new {@class="form-control"})
-     @Html.ValidationMessageFor(x=>x.ProjectUrl)
     <br />
     <button class="btn btn-info">Kaydet</button>
 }
