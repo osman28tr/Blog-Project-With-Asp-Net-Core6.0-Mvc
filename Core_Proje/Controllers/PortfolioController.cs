@@ -52,5 +52,34 @@ namespace Core_Proje.Controllers
             portfolioManager.TDelete(portfolioValue);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public IActionResult EditPortfolio(int id)
+        {
+            ViewBag.value1 = "Proje listesi";
+            ViewBag.value2 = "Projelerim";
+            ViewBag.value3 = "Proje düzenleme";
+            var portfolioValue = portfolioManager.TGetById(id);
+            return View(portfolioValue);
+        }
+        [HttpPost]
+        public IActionResult EditPortfolio(Portfolio portfolio)
+        {
+            PortfolioValidator validations = new PortfolioValidator();
+            ValidationResult results = validations.Validate(portfolio);
+
+            if (results.IsValid)
+            {
+                portfolioManager.TUpdate(portfolio);
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            
+            return RedirectToAction("Index");
+        }
     }
 }
