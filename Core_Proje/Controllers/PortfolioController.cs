@@ -41,7 +41,7 @@ namespace Core_Proje.Controllers
             {
                 foreach (var item in results.Errors)
                 {
-                    ModelState.AddModelError(item.PropertyName,item.ErrorMessage);
+                    ModelState.AddModelError(item.PropertyName,item.ErrorMessage.ToString());
                 }
             }
             return View();
