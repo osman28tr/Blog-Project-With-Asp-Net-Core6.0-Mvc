@@ -20,4 +20,11 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Dashboard}/{action=Index}/{id?}");
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+      name: "areas",
+      pattern: "{area:exists}/{controller=Default}/{action=Index}/{id?}"
+    );
+});
 app.Run();
