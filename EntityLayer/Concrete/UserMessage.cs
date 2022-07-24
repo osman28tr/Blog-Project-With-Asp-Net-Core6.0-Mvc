@@ -17,6 +17,5 @@ namespace EntityLayer.Concrete
         public bool Status { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
-        public List<UserMessage> UserMessages { get; set; }
     }
 }
