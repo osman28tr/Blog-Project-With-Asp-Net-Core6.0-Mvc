@@ -2016,10 +2016,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\asd\Controllers\" />
-    <Folder Include="Areas\asd\Data\" />
-    <Folder Include="Areas\asd\Models\" />
-    <Folder Include="Areas\asd\Views\" />
     <Folder Include="Areas\Writer\Data\" />
     <Folder Include="Areas\Writer\Models\" />
     <Folder Include="wwwroot\skydash\.git\objects\info\" />
