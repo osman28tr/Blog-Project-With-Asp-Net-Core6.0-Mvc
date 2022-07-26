@@ -4,6 +4,12 @@ namespace Core_Proje.Areas.Writer.Models
 {
     public class UserRegisterViewModel
     {
+        [Required(ErrorMessage = "Lütfen adinizi girin")]
+        public string Name { get; set; }
+        [Required(ErrorMessage = "Lütfen soyadinizi girin")]
+        public string ImageUrl { get; set; }
+        [Required(ErrorMessage = "Lütfen resim url degeri girin")]
+        public string Surname { get; set; }
         [Required(ErrorMessage = "Lütfen kullanici adini girin")]
         public string UserName { get; set; }
         [Required(ErrorMessage = "Lütfen sifreyi adini girin")]
