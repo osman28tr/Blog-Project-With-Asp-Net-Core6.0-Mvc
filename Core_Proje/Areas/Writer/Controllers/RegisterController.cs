@@ -21,16 +21,17 @@ namespace Core_Proje.Areas.Writer.Controllers
         }
         [HttpPost]
         public async Task<IActionResult> Index(UserRegisterViewModel userRegisterViewModel)
-        {           
-                WriterUser writerUser = new WriterUser()
-                {
-                    Name = userRegisterViewModel.Name,
-                    Surname = userRegisterViewModel.Surname,
-                    Email = userRegisterViewModel.Mail,                   
-                    UserName = userRegisterViewModel.UserName,
-                    ImageUrl = userRegisterViewModel.ImageUrl
-                };
-
+        {
+            WriterUser writerUser = new WriterUser()
+            {
+                Name = userRegisterViewModel.Name,
+                Surname = userRegisterViewModel.Surname,
+                Email = userRegisterViewModel.Mail,
+                UserName = userRegisterViewModel.UserName,
+                ImageUrl = userRegisterViewModel.ImageUrl
+            };
+            if (userRegisterViewModel.Password == userRegisterViewModel.ConfirmPassword)
+            {
                 var result = await _userManager.CreateAsync(writerUser, userRegisterViewModel.Password);
 
                 if (result.Succeeded)
@@ -44,9 +45,8 @@ namespace Core_Proje.Areas.Writer.Controllers
                         ModelState.AddModelError("", item.Description);
                     }
                 }
-            
-
-            return View(userRegisterViewModel);
+            }
+            return View();
         }
     }
 }
