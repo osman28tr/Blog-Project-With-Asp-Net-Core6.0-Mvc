@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-
+//identity için gerekli konfigürasyon.
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<WriterUser, WriterRole>().AddEntityFrameworkStores<Context>();
 builder.Services.AddControllersWithViews();
@@ -20,6 +20,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseStaticFiles();
+//authentication için gerekli konfigürasyon.
 app.UseAuthentication();
 app.UseRouting();
 
@@ -29,6 +30,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Dashboard}/{action=Index}/{id?}");
 
+//area için gerekli konfigürasyon.
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
