@@ -12,9 +12,9 @@ namespace Core_Proje.Areas.Writer.Models
         public string Surname { get; set; }
         [Required(ErrorMessage = "Lütfen kullanici adini girin")]
         public string UserName { get; set; }
-        [Required(ErrorMessage = "Lütfen sifreyi adini girin")]
+        [Required(ErrorMessage = "Lütfen sifreyi girin")]
         public string Password { get; set; }
-        [Required(ErrorMessage = "Lütfen sifreyi tekrar adini girin")]
+        [Required(ErrorMessage = "Lütfen sifreyi tekrar girin")]
         [Compare("Password", ErrorMessage = "Sifreler uyumlu degil")]
         [MinLength(6, ErrorMessage = "Sifreniz en az 6 karakter olmali")]
         public string ConfirmPassword { get; set; }
