@@ -17,9 +17,14 @@ namespace BusinessLayer.Concrete
             _writerMessageDal = writerMessageDal;
         }
 
-        public List<WriterMessage> GetListByFilter(string email)
+        public List<WriterMessage> GetReceiverMessageList(string receiverEmail)
         {
-            return _writerMessageDal.GetByFilter(x => x.Receiver == email);
+            return _writerMessageDal.GetByFilter(x => x.Receiver == receiverEmail);
+        }
+
+        public List<WriterMessage> GetSenderMessageList(string senderEmail)
+        {
+            return _writerMessageDal.GetByFilter(x => x.Receiver == senderEmail);
         }
 
         public void TAdd(WriterMessage t)
