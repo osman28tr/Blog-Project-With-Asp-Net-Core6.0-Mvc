@@ -29,5 +29,10 @@ namespace Core_Proje.Areas.Writer.Controllers
             var messageList = writerMessageManager.GetSenderMessageList(writerMail);
             return View(messageList);
         }
+        public IActionResult MessageDetails(int id)
+        {
+            var values = writerMessageManager.TGetById(id);
+            return View(values);
+        }
     }
 }
