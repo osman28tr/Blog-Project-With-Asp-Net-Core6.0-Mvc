@@ -24,7 +24,7 @@ namespace BusinessLayer.Concrete
 
         public List<WriterMessage> GetSenderMessageList(string senderEmail)
         {
-            return _writerMessageDal.GetByFilter(x => x.Receiver == senderEmail);
+            return _writerMessageDal.GetByFilter(x => x.Sender == senderEmail);
         }
 
         public void TAdd(WriterMessage t)

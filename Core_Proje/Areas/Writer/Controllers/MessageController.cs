@@ -15,11 +15,18 @@ namespace Core_Proje.Areas.Writer.Controllers
         {
             _userManager = userManager;
         }
-        public async Task<IActionResult> Index(string writerMail)
+        public async Task<IActionResult> ReceiverMessage(string writerMail)
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             writerMail = values.Email;
             var messageList = writerMessageManager.GetReceiverMessageList(writerMail);
+            return View(messageList);
+        }
+        public async Task<IActionResult> SenderMessage(string writerMail)
+        {
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            writerMail = values.Email;
+            var messageList = writerMessageManager.GetSenderMessageList(writerMail);
             return View(messageList);
         }
     }
