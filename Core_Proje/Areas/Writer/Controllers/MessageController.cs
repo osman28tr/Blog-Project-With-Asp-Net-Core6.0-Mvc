@@ -34,5 +34,10 @@ namespace Core_Proje.Areas.Writer.Controllers
             var values = writerMessageManager.TGetById(id);
             return View(values);
         }
+        public IActionResult ReceiverMessageDetails(int id)
+        {
+            var values = writerMessageManager.TGetById(id);
+            return View(values);
+        }
     }
 }

@@ -27,7 +27,7 @@
 								<td>@item.Subject</td>
 								<td>@item.ReceiverName</td>								
 								<td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
-								<td><a href="/Writer/Default/AnnouncementDetails/@item.WriterMessageId" class="btn btn-outline-primary">Mesajı Gör</a></td>
+								<td><a href="/Writer/Message/ReceiverMessageDetails/@item.WriterMessageId" class="btn btn-outline-primary">Mesajı Gör</a></td>
 							</tr>
 						}
 					</tbody>
