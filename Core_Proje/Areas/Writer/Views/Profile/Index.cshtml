@@ -19,11 +19,11 @@
 
 				<div class="form-group">
 					<label for="exampleInputPassword4">Şifreniz</label>
-					<input type="password" class="form-control" id="exampleInputPassword4" placeholder="Şifre">
+					@Html.TextBoxFor(x=>x.Password,new{@class="form-control"})
 				</div>
 				<div class="form-group">
 					<label for="exampleInputPassword4">Şifre Tekrar</label>
-					<input type="password" class="form-control" id="exampleInputPassword4" placeholder="Şifre tekrar">
+					@Html.TextBoxFor(x=>x.PasswordConfirm,new{@class="form-control"})
 				</div>
 
 				<div class="form-group">

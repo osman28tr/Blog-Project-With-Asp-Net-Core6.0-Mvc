@@ -37,4 +37,4 @@ namespace Core_Proje.Areas.Writer.Controllers
         }
     }
 }
-//sifre 123456aA*
+//sifre 123456aA**

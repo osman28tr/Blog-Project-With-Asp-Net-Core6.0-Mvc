@@ -39,6 +39,7 @@ namespace Core_Proje.Areas.Writer.Controllers
             }
             userValues.Name = userEditViewModel.Name;
             userValues.Surname = userEditViewModel.Surname;
+            userValues.PasswordHash = _userManager.PasswordHasher.HashPassword(userValues, userEditViewModel.Password);
             var result = await _userManager.UpdateAsync(userValues);
             if (result.Succeeded)
             {
