@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -29,9 +30,10 @@ namespace Core_Proje.Areas.Writer.Controllers
             ViewBag.value6 = document.Descendants("temperature").ElementAt(0).Attribute("value").Value;
 
             //statistics
-            ViewBag.value1 = statisticManager.GelenMesajSayisi();
+            Context context = new Context();
+            ViewBag.value1 = context.WriterMessages.Where(x => x.Receiver == values.Email).Count();           
             ViewBag.value2 = statisticManager.DuyuruSayisi();
-            ViewBag.value3 = statisticManager.ToplamKullaniciSayisi();
+            ViewBag.value3 = context.Users.Count();
             ViewBag.value4 = statisticManager.ToplamYetenekSayisi();
 
             return View();
