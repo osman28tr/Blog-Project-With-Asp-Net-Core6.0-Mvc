@@ -11,9 +11,6 @@ namespace Core_Proje.Controllers
         [HttpGet]
 		public IActionResult EditFeature()
 		{
-			ViewBag.value1 = "Düzenleme";
-			ViewBag.value2 = "Öne Çıkanlar";
-			ViewBag.value3 = "Öne Çıkan Sayfası";
 			var featureValue = featureManager.TGetById(1);
 			return View(featureValue);
 		}
