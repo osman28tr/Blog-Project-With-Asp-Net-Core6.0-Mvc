@@ -11,9 +11,6 @@ namespace Core_Proje.Controllers
 		[HttpGet]
 		public IActionResult EditAbout()
 		{
-			ViewBag.value1 = "Düzenleme";
-			ViewBag.value2 = "Hakkımda";
-			ViewBag.value3 = "Hakkımda Sayfası";
 			var aboutValue = aboutManager.TGetById(2);
 			return View(aboutValue);
 		}
