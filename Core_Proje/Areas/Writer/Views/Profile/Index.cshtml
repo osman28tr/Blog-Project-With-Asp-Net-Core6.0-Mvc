@@ -7,7 +7,7 @@
 	<div class="card">
 		<div class="card-body">
 			<h4 class="card-title">Profil Bilgilerini Düzenle</h4>
-			<form class="forms-sample" asp-action="Index" asp-controller="Profile" method="post" enctype="multipart/form-data">
+			<form class="forms-sample" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<label for="exampleInputName1">Adınız</label>
 					@Html.TextBoxFor(x=>x.Name,new{@class="form-control"})
@@ -29,6 +29,7 @@
 				<div class="form-group">
 					<label>Resim Seç</label>
 				
+					
 					<input type="file" asp-for="Picture">
 					@*<div class="input-group col-xs-12">
 					<input type="text" class="form-control file-upload-info" disabled placeholder="Resim yükleyin">
