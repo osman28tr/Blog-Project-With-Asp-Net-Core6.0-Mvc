@@ -40,6 +40,7 @@ namespace Core_Proje.Controllers
         [HttpPost]
         public IActionResult EditSocialMedia(SocialMedia socialMedia)
         {
+            socialMedia.Status = true;
             socialMediaManager.TUpdate(socialMedia);
             return RedirectToAction("Index");
         }
