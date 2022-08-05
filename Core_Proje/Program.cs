@@ -31,13 +31,13 @@ builder.Services.AddMvc();
 //    {
 //        x.LoginPath = "/AdminLogin/Index/";
 //    });
-
+//sisteme giren kullanýcýnýn ilgili ayarlarý
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.HttpOnly = true;
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(10); //maks. 10 dk sistemde kalsýn.
 
-    options.LoginPath = "/Writer/Login/Index/";
+    options.LoginPath = "/Writer/Login/Index/"; //kullanýcý login degilse bu sayfaya gitsin.
 });
 var app = builder.Build();
 
