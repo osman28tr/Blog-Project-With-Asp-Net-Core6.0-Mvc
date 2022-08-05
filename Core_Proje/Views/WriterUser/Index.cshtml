@@ -1,8 +1,35 @@
-﻿
+﻿@using EntityLayer.Concrete
+@model List<WriterUser>
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<h1>Index</h1>
+<div class="col-md-6">
+	<div class="p-2">
+		<button type="button" class="btn btn-outline-primary" id="getlistall">Verileri Getir</button>
+	</div>
+</div>
+<h4 class="text-center">Yazar Listesi</h4>
+<div class="p-2" id="listuser">
+</div>
+@section Scripts
+	{
+	<script>
+		$("#getlistall").click(function(){
+			$.ajax({
+				contentType: "application/json",
+				datatype: "json",
+				type: "Get",
+				url: "/WriterUser/ListUser/",
+
+				success: function(funk) {
+					let users = jQuery.parseJSON(funk);
+					console.log(users);
+				}
+			});
+		});
+	</script>
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
 

@@ -35,7 +35,7 @@ builder.Services.AddMvc();
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.HttpOnly = true;
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(10); //maks. 10 dk sistemde kalsýn.
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(100); //maks. 10 dk sistemde kalsýn.
     options.AccessDeniedPath = "/ErrorPage/Index/";
     options.LoginPath = "/Writer/Login/Index/"; //kullanýcý login degilse bu sayfaya gitsin.
 });
