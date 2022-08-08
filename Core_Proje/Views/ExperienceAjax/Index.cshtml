@@ -9,6 +9,7 @@
 	<div class="p-2">
 		<button type="button" class="btn btn-outline-primary" id="btngetlistall">Verileri Getir</button>
 		<button type="button" class="btn btn-outline-info" id="btnadd">Kaydet</button>
+		<button type="button" class="btn btn-outline-warning" id="btngetbyid">Id ile Getir</button>
 	</div>
 </div>
 <h4 class="text-center">Deneyim Listesi</h4>
@@ -16,9 +17,16 @@
 </div>
 <br />
 <div class="col-md-12">
+	<h5>Ekleme Paneli</h5>
 	<input type="text" class="form-control" id="txtname" placeholder="ad" />
 	<br />
 	<input type="text" class="form-control" id="txtdate" placeholder="tarih" />
+
+</div>
+<br />
+<div class="col-md-12">
+	<h5>Id'ye Göre Getirme Paneli</h5>
+	<input type="text" class="form-control" id="txtid" placeholder="ID Giriniz" />
 
 </div>
 @section Scripts
@@ -60,6 +68,21 @@
 					alert("Başarılı bir şekilde eklendi");
 				}
 			});
+		});
+
+		$("#btngetbyid").click(function() {
+			let id = $("#txtid").val();
+
+            $.ajax({
+                contentType: "application/json",
+                dataType: "json",
+                type: "Get",
+                url: "/ExperienceAjax/GetById/",
+                data: { ExperienceId: id },
+                success: function(funk2) {
+                    console.log(funk2);
+                }
+            });
 		});
 	</script>
 }

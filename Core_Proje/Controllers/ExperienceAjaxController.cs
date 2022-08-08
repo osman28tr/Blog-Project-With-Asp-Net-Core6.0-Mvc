@@ -25,5 +25,11 @@ namespace Core_Proje.Controllers
             var values = JsonConvert.SerializeObject(experience);
             return View(values);
         }
+        public IActionResult GetById(int ExperienceId)
+        {
+            var values = experienceManager.TGetById(ExperienceId);
+            var findValues = JsonConvert.SerializeObject(values);
+            return Json(findValues);
+        }
     }
 }
