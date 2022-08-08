@@ -1,8 +1,8 @@
 ﻿@using EntityLayer.Concrete
 @model List<Experience>
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 <div class="col-md-6">
@@ -13,17 +13,12 @@
 </div>
 <h4 class="text-center">Deneyim Listesi</h4>
 <div class="p-2" id="listexperience">
-
 </div>
 <br />
 <div class="col-md-12">
 	<input type="text" class="form-control" id="txtname" placeholder="ad" />
 	<br />
-	<input type="text" class="form-control" id="txtsurname" placeholder="soyad" />
-	<br />
-	<input type="text" class="form-control" id="txtusername" placeholder="kullanıcı adı" />
-	<br />
-	<input type="text" class="form-control" id="txtmail" placeholder="mail" />
+	<input type="text" class="form-control" id="txtdate" placeholder="tarih" />
 
 </div>
 @section Scripts
@@ -40,13 +35,30 @@
 					let values = jQuery.parseJSON(funk);
 					console.log(values);
 
-                    let htmlst = "<table class=table table-bordered><tr><th>ID</th><th>Başlık</th><th>Tarih</th></tr>";
-                    $.each(values, (index, value) => {
-                        htmlst += `<tr><td>${value.ExperienceId}</td> <td>${value.Name}</td><td>${value.Date}</td></tr>`
-                    });
-                    htmlst += "</table>";
-                    $("#listexperience").html(htmlst);
-				}	
+					let htmlst = "<table class=table table-bordered><tr><th>ID</th><th>Başlık</th><th>Tarih</th></tr>";
+					$.each(values, (index, value) => {
+						htmlst += `<tr><td>${value.ExperienceId}</td> <td>${value.Name}</td><td>${value.Date}</td></tr>`
+					});
+					htmlst += "</table>";
+					$("#listexperience").html(htmlst);
+				}
+			});
+		});
+
+		$("#btnadd").click(function() {
+			let values = {
+				Name: $("#txtname").val(),
+				Date: $("#txtdate").val()
+			};
+
+			$.ajax({
+				type: "Post",
+				url: "/ExperienceAjax/AddExperience/",
+				data: values,
+				success: function(funk1) {
+					let result = jQuery.parseJSON(funk1);
+					alert("Başarılı bir şekilde eklendi");
+				}
 			});
 		});
 	</script>
