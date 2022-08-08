@@ -16,6 +16,11 @@
 <div class="p-2" id="listexperience">
 </div>
 <br />
+
+<div class="p-2" id="listbyidexperience">
+</div>
+<br />
+
 <div class="col-md-12">
 	<h5>Ekleme Paneli</h5>
 	<input type="text" class="form-control" id="txtname" placeholder="ad" />
@@ -73,16 +78,22 @@
 		$("#btngetbyid").click(function() {
 			let id = $("#txtid").val();
 
-            $.ajax({
-                contentType: "application/json",
-                dataType: "json",
-                type: "Get",
-                url: "/ExperienceAjax/GetById/",
-                data: { ExperienceId: id },
-                success: function(funk2) {
-                    console.log(funk2);
-                }
-            });
+			$.ajax({
+				contentType: "application/json",
+				dataType: "json",
+				type: "Get",
+				url: "/ExperienceAjax/GetById/",
+				data: { ExperienceId: id },
+				success: function(funk2) {
+					let result = jQuery.parseJSON(funk2);
+
+					console.log(result);
+					let htmlst = "<table class=table table-hover><tr><th>Deneyim ID</th><th>Başlık</th><th>Tarih</th></tr>";
+					htmlst += `<tr><td>${result.ExperienceId}</td> <td>${result.Name}</td><td>${result.Date}</td></tr>`
+					htmlst += "</table>";
+					$("#listbyidexperience").html(htmlst);
+				}
+			});
 		});
 	</script>
 }
