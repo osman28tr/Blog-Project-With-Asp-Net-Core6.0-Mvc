@@ -48,6 +48,7 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
 }
 
+app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404/"); //hata sayfasý düzenlemesi
 app.UseStaticFiles();
 //authentication için gerekli konfigürasyon.
 app.UseAuthentication();
