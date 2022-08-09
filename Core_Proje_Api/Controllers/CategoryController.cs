@@ -51,5 +51,22 @@ namespace Core_Proje_Api.Controllers
 				return NoContent();
 			}				
 		}
+		[HttpPut]
+		public IActionResult CategoryUpdate(Category category)
+		{
+			using var context = new Context();
+			var categoryValue = context.Find<Category>(category.CategoryId);
+			if (categoryValue==null)
+			{
+				return NotFound();
+			}
+			else
+			{
+				categoryValue.CategoryName = category.CategoryName;
+				context.Update(categoryValue);
+				context.SaveChanges();
+				return NoContent();
+			}
+		}
 	}
 }
