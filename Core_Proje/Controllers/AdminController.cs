@@ -34,3 +34,4 @@ namespace Core_Proje.Controllers
         }
 	}
 }
+//sifre: 123456aA*
