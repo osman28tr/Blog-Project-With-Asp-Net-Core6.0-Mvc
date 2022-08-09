@@ -2,6 +2,7 @@
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFrameworkCore;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,8 @@ namespace Core_Proje.Areas.Writer.Controllers
 {
     [Area("Writer")]
     [Route("Writer/Message")]
+    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Writer")]
     public class MessageController : Controller
     {
         WriterMessageManager writerMessageManager = new WriterMessageManager(new EfWriterMessageDal());

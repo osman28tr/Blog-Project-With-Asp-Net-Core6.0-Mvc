@@ -1,10 +1,12 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFrameworkCore;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.Controllers
 {
+	[Authorize(Roles = "Admin")]
 	public class SkillController : Controller
 	{
 		SkillManager skillManager = new SkillManager(new EfSkillDal());
