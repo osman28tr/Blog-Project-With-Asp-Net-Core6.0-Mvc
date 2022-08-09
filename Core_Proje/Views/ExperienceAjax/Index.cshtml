@@ -10,6 +10,8 @@
 		<button type="button" class="btn btn-outline-primary" id="btngetlistall">Verileri Getir</button>
 		<button type="button" class="btn btn-outline-info" id="btnadd">Kaydet</button>
 		<button type="button" class="btn btn-outline-warning" id="btngetbyid">Id ile Getir</button>
+		<button type="button" class="btn btn-outline-danger" id="btndelete">Sil</button>
+		<button type="button" class="btn btn-outline-success" id="btnupdate">Güncelle</button>
 	</div>
 </div>
 <h4 class="text-center">Deneyim Listesi</h4>
@@ -20,6 +22,8 @@
 <div class="p-2" id="listbyidexperience">
 </div>
 <br />
+
+
 
 <div class="col-md-12">
 	<h5>Ekleme Paneli</h5>
@@ -32,6 +36,13 @@
 <div class="col-md-12">
 	<h5>Id'ye Göre Getirme Paneli</h5>
 	<input type="text" class="form-control" id="txtid" placeholder="ID Giriniz" />
+
+</div>
+
+<br />
+<div class="col-md-12">
+	<h5>Silme Paneli</h5>
+	<input type="text" class="form-control" id="txtdelid" placeholder="ID Giriniz" />
 
 </div>
 @section Scripts
@@ -92,6 +103,19 @@
 					htmlst += `<tr><td>${result.ExperienceId}</td> <td>${result.Name}</td><td>${result.Date}</td></tr>`
 					htmlst += "</table>";
 					$("#listbyidexperience").html(htmlst);
+				}
+			});
+		});
+
+		$("#btndelete").click(function() {
+			let exid = $("#txtdelid").val();
+			$.ajax({
+				url: "/ExperienceAjax/DeleteExperience/" + exid,
+				type: "post",
+				contentType: "application/json",
+				dataType: "json",
+				success: function(funk3) {
+					loadData();
 				}
 			});
 		});
