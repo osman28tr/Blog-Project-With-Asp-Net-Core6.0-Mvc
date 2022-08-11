@@ -10,7 +10,6 @@ namespace Core_Proje.Areas.Writer.Controllers
 {
     [Area("Writer")]
     [Route("Writer/Message")]
-    [Authorize(Roles = "Admin")]
     [Authorize(Roles = "Writer")]
     public class MessageController : Controller
     {

@@ -9,7 +9,6 @@ using System.Xml.Linq;
 namespace Core_Proje.Areas.Writer.Controllers
 {
     [Area("Writer")]
-    [Authorize(Roles = "Admin")]
     [Authorize(Roles = "Writer")]
     public class DashboardController : Controller
     {

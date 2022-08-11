@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Core_Proje.Areas.Writer.Controllers
 {
     [Area("Writer")]
-    [Authorize(Roles = "Admin")]
     [Authorize(Roles = "Writer")]
     public class DefaultController : Controller
     {
