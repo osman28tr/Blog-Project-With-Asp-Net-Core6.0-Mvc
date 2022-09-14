@@ -35,6 +35,8 @@ builder.Services.AddMvc();
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.HttpOnly = true;
+    options.Cookie.SameSite = SameSiteMode.Strict;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
     options.ExpireTimeSpan = TimeSpan.FromMinutes(100); //maks. 10 dk sistemde kalsýn.
     options.AccessDeniedPath = "/ErrorPage/Index/";
     options.LoginPath = "/Writer/Login/Index/"; //kullanýcý login degilse bu sayfaya gitsin.
