@@ -7,8 +7,8 @@ namespace Core_Proje_Api.DAL.ApiContext
 	{
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer("server=DESKTOP-7LR4Q85\\" +
-				"SQLEXPRESS;Database=CoreProjeDB2;Integrated Security=true;");
+			optionsBuilder.UseSqlServer("server=DESKTOP-15BM0PG\\" +
+				";Database=CoreProjeDB2;Integrated Security=true;");
 		}
 		public DbSet<Category> Categories { get; set; }
 	}
