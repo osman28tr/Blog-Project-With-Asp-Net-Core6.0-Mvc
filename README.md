@@ -16,7 +16,7 @@ Admin kısmı:
 <h3>2. Projede Kullanılan Mimarinin Genel Hatları </h3>
 <img src="Core_Proje/wwwroot/ProjectImage/Blogprojectarch.PNG" height="350px" width="600px">
 
-<h3>4. Kurulum: </h3><hr>
+<h3>3. Kurulum: </h3>
  - Projede DataAccessLayer Concrete -> Context.cs dosyasını açın, UseSqlServer metodunda belirtilen veritabanı bağlantı dizesini kendi veritabanı bağlantı dizenize göre güncelleyin.<br>
  - Ardından Visual Studio aracının üst sekmesinden view -> other windows -> package manager console kısmına tıklayın.<br>
  - Ardından açılan pencerede default project yazan yere tıklayıp açılan seçim ekranından DataAccessLayer katmanını seçin.<br>
