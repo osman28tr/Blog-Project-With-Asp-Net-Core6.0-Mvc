@@ -20,5 +20,6 @@ Admin kısmı:
  - Projede DataAccessLayer -> Concrete -> Context.cs dosyasını açınız, UseSqlServer metodunda belirtilen veritabanı bağlantı dizesini kendi veritabanı bağlantı dizenize göre güncelleyiniz.<br>
  - Ardından Visual Studio aracının üst sekmesinden view -> other windows -> package manager console kısmına tıklayınız.<br>
  - Ardından açılan pencerede default project yazan yere tıklayıp açılan seçim ekranından DataAccessLayer katmanını seçiniz.<br>
- - Açılan pencereye "update-database" yazıp enter'a tıklayınız.(ilgili veritabanı ve tabloları SSMS'de oluşacaktır.)<br>
- - Ardından DailyShop.API projesine sağ tık yapıp "Set as Startup Project" deyiniz ve API'yi ayağa kaldırınız.
+ - Açılan pencereye "update-database" yazıp enter'a tıklayınız.(ilgili veritabanı ve tabloları SSMS'de oluşacaktır.) Bu adıma kadar olan kısımları Core_Proje_Api projesi için'de tekrarlayınız.<br>
+ - Ardından Visual Studio aracının üst sekmesinden Project -> Configure startup projects yazan yere tıklayınız. Açılan pencereden "Multiple startup projects" seçeneğini seçiniz. Daha sonra karşınıza proje ile ilgili tüm katmanlar aktif bir şekilde çıkacaktır. Buradan Core_Proje ve Core_Proje_Api katmanlarının yanlarında bulunan seçim kutusuna tıklayarak start'a tıklayınız. Ardından uygula deyip tamam diyerek pencereyi kapatınız.<br>
+ - Ardından start butonuna tıklayarak hem projeyi hemde api'yi ayağa kaldırınız.
